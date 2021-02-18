@@ -1,0 +1,12 @@
+.content {
+  width: 100%;
+  max-width: 882px;
+  min-width: 282px;
+  margin: auto;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1279px) {
+  .content {
+    max-width: 600px;
+  }
+}

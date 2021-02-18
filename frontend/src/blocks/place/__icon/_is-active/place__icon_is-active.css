@@ -1,0 +1,4 @@
+.place__icon_is-active {
+  opacity: 1;
+  background: url('../../../../images/like-is-active.svg') no-repeat center;
+}

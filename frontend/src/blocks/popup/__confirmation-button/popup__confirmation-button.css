@@ -1,0 +1,19 @@
+.popup__confirmation-button {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #000;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.22;
+  margin: 0 auto 36px;
+  padding: 13px 0 19px;
+}
+
+.popup__confirmation-button:hover {
+  cursor: pointer;
+  opacity: .8;
+  transition: opacity .5s ease-out;
+}

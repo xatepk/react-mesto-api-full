@@ -1,0 +1,14 @@
+.profile__about-self {
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.22;
+  margin: 16px 0 0;
+}
+
+@media screen and (max-width: 321px) {
+  .profile__about-self {
+    font-size: 14px;
+    line-height: 1.21;
+  }
+}
