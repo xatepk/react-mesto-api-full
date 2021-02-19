@@ -1,4 +1,4 @@
-class NotFound extends Error {
+class Unautorized extends Error {
   constructor(message) {
     super();
 
@@ -7,4 +7,4 @@ class NotFound extends Error {
   }
 }
 
-module.exports = NotFound;
+module.exports = Unautorized;

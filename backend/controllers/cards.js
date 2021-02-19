@@ -1,8 +1,14 @@
 const Card = require('../models/card');
+const { NotFound } = require('../errors/index');
 
-module.exports.getCards = (req, res) => Card.find({})
-  .then((cards) => res.status(200).send(cards))
-  .catch((err) => res.status(500).send({ message: err.message }));
+module.exports.getCards = (req, res, next) => {
+  Card.find({})
+    .orFail(() => {
+      throw new NotFound('Карточки не найдены');
+    })
+    .then((cards) => res.status(200).send(cards))
+    .catch(next);
+};
 
 module.exports.createCard = (req, res) => {
   const { name, link } = req.body;

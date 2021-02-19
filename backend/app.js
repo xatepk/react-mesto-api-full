@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const express = require('express');
 
 const bodyParser = require('body-parser');
@@ -6,6 +7,8 @@ const mongoose = require('mongoose');
 const usersRoutes = require('./routes/users');
 const cardsRoutes = require('./routes/cards');
 const pageNotFound = require('./routes/pageNotFound');
+const authRouter = require('./middlewares/auth');
+const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
 const { PORT = 3000 } = process.env;
@@ -19,15 +22,19 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   useUnifiedTopology: true,
 });
 
-app.use((req, res, next) => {
-  req.user = {
-    _id: '6009e07d248d293fa065279d',
-  };
+// app.use((req, res, next) => {
+//   req.user = {
+//     _id: '6009e07d248d293fa065279d',
+//   };
 
-  next();
-});
+//   next();
+// });
+
 app.use('/', usersRoutes);
-app.use('/', cardsRoutes);
+app.use('/', authRouter, cardsRoutes);
 app.use('/', pageNotFound);
+
+app.use(errorHandler);
+
 app.listen(PORT, () => {
 });
