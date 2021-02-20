@@ -34,7 +34,7 @@ module.exports.getUserInfo = (req, res, next) => User.findById(req.user._id)
 module.exports.updateProfile = (req, res, next) => {
   const { name, about } = req.body;
 
-  return User.findByIdAndUpdate(req.user._id, { name, about })
+  return User.findByIdAndUpdate(req.user._id, { name, about }, { new: true })
     .then((user) => {
       if (!user) {
         throw new NotFound('Нет пользователя с таким id');
@@ -47,7 +47,7 @@ module.exports.updateProfile = (req, res, next) => {
 module.exports.updateAvatar = (req, res, next) => {
   const { avatar } = req.body;
 
-  return User.findByIdAndUpdate(req.user._id, { avatar })
+  return User.findByIdAndUpdate(req.user._id, { avatar }, { new: true })
     .then((user) => {
       if (!user) {
         throw new NotFound('Нет пользователя с таким id');

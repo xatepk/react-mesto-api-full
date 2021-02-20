@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 const express = require('express');
+const cors = require('cors');
 
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -12,6 +13,7 @@ const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
 const { PORT = 3000 } = process.env;
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
