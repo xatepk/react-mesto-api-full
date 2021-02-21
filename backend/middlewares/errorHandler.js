@@ -1,11 +1,10 @@
 const { CelebrateError } = require('celebrate');
-const mongoose = require('mongoose');
 
 // eslint-disable-next-line no-unused-vars
 const errorHandler = (err, req, res, next) => {
   const { status = 500, message } = err;
-  if (err instanceof mongoose.Error.ValidationError) {
-    return res.status(400).send(err.errors);
+  if (err.message && err.message.includes('Cast')) {
+    return res.status(400).send({ message: err.message });
   }
 
   if (err instanceof CelebrateError) {

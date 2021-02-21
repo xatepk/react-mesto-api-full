@@ -7,7 +7,6 @@ const mongoose = require('mongoose');
 
 const usersRoutes = require('./routes/users');
 const cardsRoutes = require('./routes/cards');
-const pageNotFound = require('./routes/pageNotFound');
 const authRouter = require('./middlewares/auth');
 const errorHandler = require('./middlewares/errorHandler');
 
@@ -26,7 +25,6 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 
 app.use('/', usersRoutes);
 app.use('/', authRouter, cardsRoutes);
-app.use('/', pageNotFound);
 
 app.use(errorHandler);
 

@@ -140,6 +140,7 @@ class Api{
 
 const api = new Api({
   baseUrl: 'https://api.xatepk.students.nomoreparties.space',
+  // baseUrl: 'https://localhost:3000'
 });
 
 export default api;
