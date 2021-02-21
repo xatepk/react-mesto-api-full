@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && scp -r ./build/* kkhatya@178.154.249.44:/home/kkhatya/sprint15/frontend"
+    "deploy": "npm run build && scp -r ./build/* kkhatya@178.154.249.44:/home/kkhatya/sprint15/react-mesto-api-full/build"
   },
   "eslintConfig": {
     "extends": [
