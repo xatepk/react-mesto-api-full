@@ -3,14 +3,8 @@ const validator = require('validator');
 
 const avatarUpdate = celebrate({
   body: {
-    name: Joi.string().required().min(2).max(30)
-      .messages({
-        'string.min': 'Минимум 2 символа',
-        'string.max': 'Максимум 30 символов',
-        'any.require': 'Обязательное поле',
-      }),
     avatar: Joi.string().required().custom((value, helper) => {
-      if (validator.isUrl(value)) {
+      if (validator.isURL(value)) {
         return value;
       }
       return helper.message('Невалидная ссылка');
