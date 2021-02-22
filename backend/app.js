@@ -27,7 +27,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 app.use('/', usersRoutes);
 app.use('/', authRouter, cardsRoutes);
 app.use(() => {
-  throw new NotFound({ message: 'Запрашиваемый ресурс не найден' });
+  throw new NotFound('Запрашиваемый ресурс не найден');
 });
 
 app.use(errorHandler);
