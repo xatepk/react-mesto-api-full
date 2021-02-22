@@ -7,7 +7,6 @@ const mongoose = require('mongoose');
 
 const usersRoutes = require('./routes/users');
 const cardsRoutes = require('./routes/cards');
-const authRouter = require('./middlewares/auth');
 const errorHandler = require('./middlewares/errorHandler');
 const { NotFound } = require('./errors/index');
 
@@ -25,7 +24,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 });
 
 app.use('/', usersRoutes);
-app.use('/', authRouter, cardsRoutes);
+app.use('/', cardsRoutes);
 app.use(() => {
   throw new NotFound('Запрашиваемый ресурс не найден');
 });
