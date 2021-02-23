@@ -10,7 +10,7 @@ const createCard = celebrate({
         'any.require': 'Обязательное поле',
       }),
     link: Joi.string().required().custom((value, helper) => {
-      if (validator.isUrl(value)) {
+      if (validator.isURL(value)) {
         return value;
       }
       return helper.message('Невалидная ссылка');
