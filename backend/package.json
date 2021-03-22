@@ -1,8 +1,8 @@
 {
-  "name": "express-mesto",
+  "name": "express-diploma",
   "version": "1.0.0",
   "author": "Khatya Khakhutaishvili",
-  "description": "### Проект Mesto фронтенд + бэкенд",
+  "description": "### Дипломная работа бэкенд",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xatepk/express-mesto.git"
+    "url": "git+https://github.com/xatepk/movies-explorer-api.git"
   },
   "keywords": [],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xatepk/express-mesto/issues"
+    "url": "https://github.com/xatepk/movies-explorer-api/issues"
   },
-  "homepage": "https://github.com/xatepk/express-mesto#readme",
+  "homepage": "https://github.com/xatepk/movies-explorer-api#readme",
   "devDependencies": {
     "eslint": "^7.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
